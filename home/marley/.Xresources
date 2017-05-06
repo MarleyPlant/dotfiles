@@ -1,0 +1,54 @@
+URxvt.color0:   #2E353D
+URxvt.color1:   #B2C7D2
+URxvt.color2:   #99A7AF
+URxvt.color3:   #7A878E
+URxvt.color4:   #9BCAE3
+URxvt.color5:   #12A4F2
+URxvt.color6:   #12A4F2
+URxvt.color7:   #12A4F2
+
+URxvt.color8:   #12A44F2
+URxvt.color9:   #048BD2
+URxvt.color10:  #0872A9
+URxvt.color11:  #B2C7D2
+URxvt.color12:  #B2C7D2
+URxvt.color13:  #9A61D6
+URxvt.color14:  #B2C7D2
+URxvt.color15:  #B2C7D2
+
+URxvt.background: #292a44
+URxvt.foreground: #678bdc
+
+URxvt.font: xft:Monaco:size=7
+URxvt.shading: 30
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.internalBorder: 16
+URxvt.cursorUnderline : true
+URxvt.cursorColor : #B2C7D2
+URxvt.geometry : 70x20
+URxvt.thickness : 5
+
+
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:99B2C7D2, #002b36, #000000
+rofi.color-normal: argb:00B2C7D2, argb:ff000000, argb:00B2C7D2, argb:00ffffff, argb:ff0546B5
+rofi.color-active: #268bd2, #ffffff, #268bd2, #268bd2, #268bd2
+rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+
+rofi.fake-transparency: true
+rofi.fake-background: /home/nerdypepper/Pictures/TermWall-01.png
+rofi.font: SFNS Display 10
+rofi.columns: 3
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.location: 0
+rofi.padding: 300
+rofi.fullscreen: true
+rofi.width: 1920
+rofi.lines: 19
