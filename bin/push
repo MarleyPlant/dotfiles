@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear #Clear Console
+git add -A #Add all modified files to the git commit
+echo -n "Commit message: " #ask for the commit message
+read message #take user input
+git commit -m "$message" #make commit using $message as the commit messaage
+git push #push commit to repository
