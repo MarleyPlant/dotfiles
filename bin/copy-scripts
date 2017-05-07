@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo chmod +x * #Make all files executable
+sudo cp * /bin #Copy all files to bin
+sudo rm /bin/copy-scripts #delete this file from bin
