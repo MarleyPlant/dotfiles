@@ -78,9 +78,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+bindsym $mod+1 workspace 1:term
+bindsym $mod+2 workspace 2:editor
+bindsym $mod+3 workspace 3:www
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -93,9 +93,9 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+1 move container to workspace 1:term
+bindsym $mod+Shift+2 move container to workspace 2:editor
+bindsym $mod+Shift+3 move container to workspace 3:www
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -144,16 +144,32 @@ client.urgent           #900000 #6ca05a #B2C7D2
 
 
 
-workspace 1 gaps inner 10
-workspace 1 gaps outer 20
-smart_gaps on
 
 # Remove Title Bar
 new_window 1pixel
 
+# Workspace Specifics
+
+## Terminal, Workspace 1
+assign [class="URxvt"] 1:term
+workspace 1:term gaps inner 10
+workspace 1:term gaps outer 20
+
+## Editor (Atom), Workspace 2
+assign [class="Atom"] 2:editor
+
+## Web Browser (Chromium), Workspace 3
+assign [class="Chromium"] 3:www
+
+
 bindsym $mod+r mode "resize"
+
+# Startup Commands
+exec --no-startup-id i3-msg 'workspace 1:term; exec /usr/bin/urxvt'
+exec --no-startup-id i3-msg 'workspace 2:editor; exec /usr/bin/atom'
+exec --no-startup-id i3-msg 'workspace 3:www; exec /usr/bin/chromium'
+
+
 exec xrdb -load ~/.Xresources
-exec compton &
 exec polybar top &
-exec dunst -conf /home/nerdypepper/.config/i3/dunstrc &
 exec feh --bg-scale /home/marley/Pictures/wallpapeer.jpg
