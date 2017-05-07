@@ -27,6 +27,9 @@ bindsym $mod+Shift+q kill
 # start ROFI (a program launcher)
 bindsym $mod+d exec "rofi -show run"
 
+#I3Lock Command
+bindsym $mod+Escape exec /home/marley/.config/i3/i3lock.sh
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -151,25 +154,26 @@ new_window 1pixel
 # Workspace Specifics
 
 ## Terminal, Workspace 1
-assign [class="URxvt"] 1:term
+for_window [class="URxvt"] border pixel 4
 workspace 1:term gaps inner 10
 workspace 1:term gaps outer 20
 
 ## Editor (Atom), Workspace 2
-assign [class="Atom"] 2:editor
+for_window [class="Atom"] border pixel 0
+assign [class="Atom"] → 2:editor
 
 ## Web Browser (Chromium), Workspace 3
-assign [class="Chromium"] 3:www
+assign [class="Chromium"] → 3:www
+for_window [class="Chromium"] border pixel 0
 
 
 bindsym $mod+r mode "resize"
 
 # Startup Commands
-exec --no-startup-id i3-msg 'workspace 1:term; exec /usr/bin/urxvt'
-exec --no-startup-id i3-msg 'workspace 2:editor; exec /usr/bin/atom'
-exec --no-startup-id i3-msg 'workspace 3:www; exec /usr/bin/chromium'
+exec --no-startup-id i3-msg 'workspace 3:www; exec chromium; workspace 1:term'
 
 
 exec xrdb -load ~/.Xresources
+exec sudo systemctl start httpd.service
 exec polybar top &
 exec feh --bg-scale /home/marley/Pictures/wallpapeer.jpg
