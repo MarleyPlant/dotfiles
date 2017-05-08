@@ -173,6 +173,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id i3-msg 'workspace 3:www; exec chromium; workspace 1:term'
 
 
+exec setxkbmap gb
 exec xrdb -load ~/.Xresources
 exec sudo systemctl start httpd.service
 exec polybar top &
