@@ -83,3 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias b="vendor/bin/behat"
+alias ba="vendor/bin/behat --append-snippets"
+alias bs="vendor/bin/behat --stop-on-failure"
+alias r="vendor/bin/phpspec run"
+alias dc="docker-compose"
+alias reformat="sed 's/\\\\n/\\n/g'"
+alias watchlog="tail -f /var/log/apache2/error.log | reformat"
+alias ks='kill $(pidof php)'
